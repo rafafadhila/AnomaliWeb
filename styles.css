@@ -280,6 +280,7 @@
     width: 280px;
     justify-content: center;
     transition: 300ms;
+    margin: 10px;
   }
 
   .card:not(:hover) {
@@ -352,7 +353,6 @@
     color: white;
     padding: 1.5em;
     width: auto;
-    margin-top: 20px;
   }
 
   .footer_content {
@@ -440,7 +440,7 @@
   /* title */
 
   .title {
-    background-image: linear-gradient(rgb(105, 0, 0, 0.3), rgb(105, 0, 0, 0.3)), url('/images/tentang_kami.png');
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -921,15 +921,37 @@
     align-items: center;
   }
 
-  .card .img{
+  .card-2{
+    margin: 20px 10px;
+  }
+
+  .card-2 .img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .card-2 .img img:not(:hover){
+    transition: 300ms;
+  }
+
+  .card-2 .img img:hover{
+    width: 205px;
+    height: 250px;
+    transition: 300ms;
+    padding: 7.5px;
+  }
+
+  .card-2 .btn{
     display: flex;
     justify-content: center;
   }
 
-  .card .btn{
-    display: flex;
-    justify-content: center;
+  .btn-2 a{
+    width: 155px;
   }
+
+
   /* -------------------------------- 
   
   Utilities 
