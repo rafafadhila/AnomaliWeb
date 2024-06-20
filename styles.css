@@ -421,6 +421,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
   }
 
   .navbar .content {
@@ -448,6 +453,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 85px;
   }
 
   .title .content {
@@ -492,6 +498,8 @@
     display: flex;
     justify-content: center;
   }
+
+  
 
   .parent {
     display: grid;
@@ -554,6 +562,7 @@
     width: 65px;
     height: 65px;
     transition: 300ms;
+    margin: 5px;
   }
 
   .menu-content .menu-img img:not(:hover) {
@@ -596,7 +605,7 @@
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 11;
     top: 0;
     right: 0;
     background-color: #ffffff;
@@ -824,7 +833,7 @@
     width: 600px;
   }
 
-  input {
+  .form_row input {
     padding: 20px 30px;
     border: #868686 solid 1px;
     border-radius: 5px;
@@ -834,7 +843,7 @@
     color: red;
   }
 
-  textarea {
+  .form_row textarea {
     padding: 20px 30px;
     border: #868686 solid 1px;
     border-radius: 5px;
@@ -847,23 +856,23 @@
     max-height: 150px;
   }
 
-  input:focus,textarea:focus{
+  .form_row input:focus,textarea:focus{
     background-color: #eaeaea;
     outline: none;
   }
  
-  input[name="submitbtn"]{
+  .form_row input[name="submitbtn"]{
     background-color: rgb(74, 74, 74);
     color: white;
     transition: 300ms;
   }
-  input[name="submitbtn"]:hover{
+  .form_row input[name="submitbtn"]:hover{
     background-color: red;
     color: white;
     transition: 300ms;
     cursor:pointer;
   }
-  input[name="submitbtn"]:active{
+  .form_row input[name="submitbtn"]:active{
     background-color: red;
     color: white;
     transition: 100ms;
@@ -883,27 +892,165 @@
     border-radius: 20px;
   }
 
-  /* article news */
+  /* article news container */
 
-  .article-news{
+  .article_news_container{
     display: flex;
     justify-content: center;
+    margin: 10px 0px 40px 0px;
   }
 
-  .article-news .section{
-    width: 600px;
-  }
-
-  .section .content{
-    margin: 20px 0;
-  }
-
-  .content .btn{
+  .article_news_container .wrapper{
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    width: 900px;
+    gap: 30px;
   }
+
+  .wrapper .list{
+    width: 400px;
+  }
+
   
+  .list p{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .list h {
+    color: red;
+    font-size: 18px;
+    margin-right: 5px;
+  }
+
+  .list a{
+    text-decoration: none;
+    color: black;
+    transition: 300ms;
+  }
+
+  .list a:hover{
+    color: red;
+    transition: 300ms
+  }
+
+/* article section */
+
+.article_section{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.article_wrapper{
+  width: 850px;
+  padding: 50px 100px;
+}
+
+.article_wrapper h1{
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.article_wrapper p, ol, ul{
+  font-size: 15px;
+  margin: 0.5rem 0px 1.5rem 0px;
+  line-height: 1.5rem;
+}
+
+.article_wrapper ul{
+  padding-left: 4rem;
+}
+.article_wrapper ol{
+  padding-left: 2rem;
+}
+
+.article_wrapper li{
+  margin-bottom: 0.5rem;
+}
+
+.article_image{
+  display: flex;
+  justify-content: center;
+}
+
+.article_image img{
+  margin: 20px;
+}
+
+.article_content{
+  padding: 20px;
+}
+
+/* Navigation */
+
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.navigation a{
+  text-decoration: none;
+  color: green;
+  font-size: 15px;
+}
+
+/* article comment */
+
+.article_comment{
+  padding: 20px;
+}
+
+.article_comment textarea {
+  padding: 20px 30px;
+  border: #868686 solid 1px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  resize: vertical;
+  min-height: 150px;
+  max-height: 350px;
+  width: 92.5%;
+}
+
+.article_comment .input_row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.article_comment input{
+  border: #868686 solid 1px;
+  border-radius: 5px;
+  padding: 20px;
+  width: 25%;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.article_comment input:focus,textarea:focus{
+  background-color: #eaeaea;
+  outline: none;
+}
+
+.article_comment input[name="submitbtn"]{
+  background-color: rgb(74, 74, 74);
+  color: white;
+  transition: 300ms;
+  width: 100%;
+}
+.article_comment input[name="submitbtn"]:hover{
+  background-color: red;
+  color: white;
+  transition: 300ms;
+  cursor:pointer;
+}
+
+
   /* employee */
 
   .employee {
