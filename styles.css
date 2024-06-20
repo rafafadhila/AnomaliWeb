@@ -1012,3 +1012,117 @@
   .cd-line-height-lg {
     line-height: 1.58;
   }
+/*career*/
+  .center {
+    margin: auto;
+    width: 50%;
+    padding: 10;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 45.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+/* career 2 */
+  .career-container{
+    margin-bottom: 20px;
+    
+  }
+
+  .jobs-list-container {
+    max-width: 900px;
+    margin: 20px auto;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .jobs-list-container h2
+{
+  font-size:  30px;
+  border-left: 4px solid #000000;
+  padding-left: 20px;
+}  
+.jobs-list-container .jobs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+ .jobs-list-container .jobs img{
+  width: 100px;
+}
+.jobs-list-container .job {
+  box-shadow: 0 4px 24px -8px rgba(2, 48, 71, 0.2);
+  padding: 16px;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 400m ease;
+}
+
+.jobs-list-container .job:hover {
+  transform:scale(1.03);
+}
+
+.jobs-list-container .open-positions {
+  position: absolute;
+  top: 40px;
+  right: 24px;
+  color: #cd0000;
+}
+
+.jobs-list-container .job-title {
+  font-size: 20px;
+  padding: 10px 0;
+  margin: 0;
+  color: #000000;
+}
+
+.jobs-list-container .details {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+  flex: 1;
+}
+
+.jobs-list-container .details-btn {
+  text-decoration: none;
+  border: 1px solid #000000;
+  color: #212020;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+  transition: all 400ms ease;
+}
+
+.jobs-list-container .details-btn:hover{
+  background: #eb2b2b;
+  color: whitesmoke; 
+}
+
+@media (max-width: 940px) {
+  .jobs-list-container .jobs{
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+
+@media (max-width: 940px) {
+  .jobs-list-container .jobs{
+    grid-template-columns: 1fr  ;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
