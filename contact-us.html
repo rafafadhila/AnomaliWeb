@@ -33,7 +33,7 @@
         <div class="content">
             <a href="/homepage.html"><img src="/images/ALC_Group.png" width="110" height="65"></a>
 
-            <a href="#" onclick="openNav()"><img src="/images/burgerbar.png" alt="burger" width="30" height="30"></a>
+            <a onclick="openNav()"><img src="/images/burgerbar.png" alt="burger" width="30" height="30"></a>
         </div>
     </section>
 
@@ -56,7 +56,8 @@
                 <div class="info_desc">
                     <h3>Address</h3>
                     <p>Patra Jasa Office Tower 17th Floor Suite 1701</p>
-                    <p>Jl. Gatot Suboto Kav. 32-34, Kuningan Timur, Setia BudiKota Jakarta Selatan, DKI Jakarta 12950</p>
+                    <p>Jl. Gatot Suboto Kav. 32-34, Kuningan Timur</p>
+                    <p>Setia BudiKota Jakarta Selatan, DKI Jakarta 12950</p>
                 </div>
             </div>
             <div class="info_content">
@@ -85,15 +86,18 @@
                 </div>
             </div>
 
-            <div class="form_section">
-                <form class="form_row" id="myForm">  
-                    <input type="text" name="name" placeholder="Full Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="text" name="subject" placeholder="Subject" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <input type="submit" name="submitbtn" value="Submit">  
+            <div class="form_section" >
+                <iframe name="votar" style="display:none;"></iframe>
+                <form class="form_column" id="myForm" action="http://localhost/anomali_form.php" method="post" target="votar">  
+                    <input type="text" name="name" placeholder="Full Name" required value="admin">
+                    <input type="email" name="email" placeholder="Email" required value="admin@email.com">
+                    <input type="text" name="subject" placeholder="Subject" required value="admin">
+                    <textarea placeholder="Your Message" name="message" required>test</textarea>
+                    <input type="submit" name="submitbtn" value="Submit">
+                    <p class="form_success"></p>
                 </form>
-              </div>
+            </div>
+            <div class="form_loader"></div>
         </div>  
     </section>
 

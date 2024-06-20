@@ -25,6 +25,9 @@ function closeNav() {
 }
 
 const form = document.getElementById('myForm'); // Get reference to the form
+const form_success = document.querySelector(".form_success");
+const form_loader = document.querySelector(".form_loader");
+
 
 form.addEventListener('submit', (event) => {
   const nameInput = form.elements.name; // Get form elements by name
@@ -37,5 +40,23 @@ form.addEventListener('submit', (event) => {
 
     // Display an error message (optional)
     alert('Please fill in all required fields (Name, Email, Subject).');
+    }
+
+    form_loader.classList.remove('form_loader');
+    form_loader.classList.add('form_loader--display');
+    form_success.classList.remove('form_success--display')
+    form_success.textContent = "";
+
+    setTimeout(function() {
+      form.reset(); //reset the form
+
+      // display the sucess message
+      form_success.classList.remove('form_success');
+      form_success.classList.add('form_success--display');
+      form_success.textContent = "Your Message has been submitted!";
+
+      form_loader.classList.remove('form_loader--display');
+
+    }, 2000); // Reset form after 2 seconds\
   }
-});
+);
