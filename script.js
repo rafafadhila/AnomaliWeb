@@ -28,6 +28,70 @@ const form = document.getElementById('myForm'); // Get reference to the form
 const form_success = document.querySelector(".form_success");
 const form_loader = document.querySelector(".form_loader");
 
+// captcha
+const captchaCanvas = document.getElementById('captcha-image');
+const captchaInput = document.getElementById('captcha-input');
+const refreshButton = document.getElementById('refresh-captcha');
+const submitButton = document.getElementById('submitbtn');
+
+function generateCaptcha() {
+  const ctx = captchaCanvas.getContext('2d');
+  ctx.clearRect(0, 0, captchaCanvas.width, captchaCanvas.height);
+
+  // Generate random numbers and text
+  const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+  let captchaText = '';
+  for (let i = 0; i < 5; i++) {
+    captchaText += letters.charAt(Math.floor(Math.random() * letters.length));
+    // Add a space after each character (except the last one)
+    if (i < 4) {
+      captchaText += ' ';
+    }
+  }
+
+  // Set font and text
+  ctx.font = '60px Special Elite';
+  ctx.fillStyle = '#525252';
+  ctx.fillText(captchaText, 35, 100);
+ 
+  // Add distortions
+  for (let i = 0; i < captchaCanvas.width; i++) {
+    for (let j = 0; j < captchaCanvas.height; j++) {
+      const x = i + Math.random() * 2 - 1;
+      const y = j + Math.random() * 2 - 1;
+      ctx.putImageData(ctx.getImageData(i, j, 5, 5), x, y);
+    }
+  }
+
+  // Add lines
+  for (let i = 0; i < 30; i++) {
+    ctx.beginPath();
+    ctx.moveTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
+    ctx.lineTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
+    ctx.strokeStyle = "#525252"; // Hexadecimal color code
+    ctx.stroke();
+  }
+
+  return captchaText;
+}
+
+let captchaCode;
+
+// Generate initial captcha
+captchaCode = generateCaptcha();
+
+refreshButton.addEventListener('click', () => {
+  captchaCode = generateCaptcha();
+});
+
+captchaInput.addEventListener('keyup', () => {
+  if (captchaInput.value === captchaCode) {
+    submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
+  }
+});
+
 
 form.addEventListener('submit', (event) => {
   const nameInput = form.elements.name; // Get form elements by name
@@ -44,6 +108,7 @@ form.addEventListener('submit', (event) => {
 
     form_loader.classList.remove('form_loader');
     form_loader.classList.add('form_loader--display');
+
     form_success.classList.remove('form_success--display')
     form_success.textContent = "";
 
@@ -55,8 +120,11 @@ form.addEventListener('submit', (event) => {
       form_success.classList.add('form_success--display');
       form_success.textContent = "Your Message has been submitted!";
 
+      // display loader
       form_loader.classList.remove('form_loader--display');
 
     }, 2000); // Reset form after 2 seconds\
   }
 );
+
+

@@ -10,20 +10,20 @@
 
   body {
     background-color: hsl(0, 0%, 100%);
-    font-family: system-ui, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.125rem; /* 18px */
     line-height: 1.4;
   }
 
   
-  button, input, textarea, select {
+  /* button, input, textarea, select {
     background-color: transparent;
     border-radius: 0;
     color: inherit;
     line-height: inherit;
     -webkit-appearance: none;
             appearance: none;
-  }
+  } */
   
   
   table {
@@ -206,7 +206,7 @@
   }
 
   .hero_small_content {
-    width: 60%;
+    width: 50%;
     font-size: 24px;
     font-weight: bold
   }
@@ -1079,6 +1079,45 @@
     visibility: hidden;
   }
 
+  /* captcha */
+
+  #captcha-container{
+    position: relative;
+    margin: 0 auto 10px auto;
+  }
+
+  #captcha-container canvas{
+    height: 75px;
+    width: 150px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #868686;
+    float: left;
+    margin-right: 10px;
+  }
+
+  #captcha-container input{
+    float: left;
+    padding: 10px 0 10px 10px;
+    width: 80px;
+    font-size: 16px;
+  }
+
+  #refresh-captcha{
+    border-radius: 5px;
+    padding: 5px;
+    float: left;
+    position: absolute;
+    top: 52px;
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
   /* HTML: <div class="loader"></div> */
   .form_loader {
     opacity: 0;
@@ -1414,94 +1453,17 @@
     }
   }
 
-  /* -------------------------------- 
-  
-  Utilities 
-  
-  -------------------------------- */
-  
-  .cd-margin-bottom-2xs {
-    margin-bottom: 0.75rem;
-  }
-  
-  .cd-margin-bottom-xs {
-    margin-bottom: 1rem;
-  }
-  
-  .cd-margin-bottom-sm {
-    margin-bottom: 1.5rem;
-  }
-  
-  .cd-container {
-    width: calc(100% - 4rem);
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .cd-max-width-adaptive-sm,
-  .cd-max-width-adaptive-md,
-  .cd-max-width-adaptive-lg {
-    max-width: 70rem;
-  }
 
-  .cd-flex {
-    display: flex;
-  }
-  
-  .cd-justify-end {
-    justify-content: end;
-  }
-  
-  .cd-link {
-    color: rgb(0, 0%, 7%);
-    text-decoration: none;
-    background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
-    background-size: 200% 1px;
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
-    transition: background-position 0.2s;
-  }
-  
-  .cd-link:hover {
-    background-position: 0% 100%;
-  }
-  
-  .cd-link--contrast-higher {
-    color: hsl(230, 13%, 9%);
-    background-image: linear-gradient(to right, hsl(230, 13%, 9%) 50%, hsla(230, 13%, 9%, 0.1) 50%);
-  }
-  
-  .cd-line-height-lg {
-    line-height: 1.58;
-  }
-
-  @media screen and (max-width: 426px){
-    h1{
-      font-size: 8vw;
-    }
-
-    h2{
-      font-size: 6vw;
-    }
-
-    h3{
-      font-size: 4vw;
-    }
-
-    p, li, a{
-      font-size: 3vw;
-    }
-  }
-/*career*/
+  /* Career Page */
   .center {
     margin: auto;
     width: 50%;
     padding: 10;
   }
   
-  * {
+  /* * {
     box-sizing: border-box;
-  }
+  } */
   
   .column {
     float: left;
@@ -1606,3 +1568,83 @@
     margin: 0 auto;
   }
 }
+
+  /* -------------------------------- 
+  
+  Utilities 
+  
+  -------------------------------- */
+  
+  .cd-margin-bottom-2xs {
+    margin-bottom: 0.75rem;
+  }
+  
+  .cd-margin-bottom-xs {
+    margin-bottom: 1rem;
+  }
+  
+  .cd-margin-bottom-sm {
+    margin-bottom: 1.5rem;
+  }
+  
+  .cd-container {
+    width: calc(100% - 4rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cd-max-width-adaptive-sm,
+  .cd-max-width-adaptive-md,
+  .cd-max-width-adaptive-lg {
+    max-width: 70rem;
+  }
+
+  .cd-flex {
+    display: flex;
+  }
+  
+  .cd-justify-end {
+    justify-content: end;
+  }
+  
+  .cd-link {
+    color: rgb(0, 0%, 7%);
+    text-decoration: none;
+    background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
+    background-size: 200% 1px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    transition: background-position 0.2s;
+  }
+  
+  .cd-link:hover {
+    background-position: 0% 100%;
+  }
+  
+  .cd-link--contrast-higher {
+    color: hsl(230, 13%, 9%);
+    background-image: linear-gradient(to right, hsl(230, 13%, 9%) 50%, hsla(230, 13%, 9%, 0.1) 50%);
+  }
+  
+  .cd-line-height-lg {
+    line-height: 1.58;
+  }
+
+  @media screen and (max-width: 426px){
+    h1{
+      font-size: 8vw;
+    }
+
+    h2{
+      font-size: 6vw;
+    }
+
+    h3{
+      font-size: 4vw;
+    }
+
+    p, li, a{
+      font-size: 3vw;
+    }
+  }
+  
