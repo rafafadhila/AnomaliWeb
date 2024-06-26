@@ -168,6 +168,41 @@
       transform: rotate(1turn);
     }
   }
+
+  /* float button */
+
+.float-container {
+  position: fixed;
+  z-index: 9;
+  bottom: 0px;
+  right: 0px;
+  margin: 30px;
+}
+
+.float-button {
+  text-decoration: none;
+}
+
+.float-container .float-button{
+  position: absolute;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-size: 24px;
+  line-height: 50px;
+  transition:200ms;
+} 
+
+.float-container .float-button:hover{
+  box-shadow: 1px 2px #cd0000;
+  transition:200ms;
+}
   
   
   /* -------- Hero -------------*/
@@ -175,7 +210,6 @@
   .hero {
     position: relative;
     z-index: 1;
-    /* padding: 20rem 0; */
     height: 90vh;
     background-color: hsl(240, 4%, 95%);
     background-size: cover;
@@ -188,7 +222,7 @@
   }
 
   .hero_content {
-    width: 75%;
+    width: 80%;
   }
 
   .hero_small {
@@ -561,9 +595,9 @@
     justify-content: center;
   }
 
-  
 
-  
+
+
 
   .parent {
     display: grid;
