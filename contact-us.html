@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Anomali Lintas Cakrawala Group</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,27 +19,29 @@
     <section class="container-sidenav">
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="/homepage.html" class="logo"><img src="/images/ALC_Group.png"></a>
-            <a href="/homepage.html">Beranda</a>
-            <a href="/quick-fact.html">Tentang Kami</a>
-            <a href="/publication.html">Publikasi</a>
-            <a href="/career.html">Karir</a>
-            <a href="/employee-room.html">Ruang Pegawai</a>
-            <a href="/contact-us.html">Kontak</a>
-            <a href="/subsidiaries.html">Unduh Profil Perusahaan</a>
+            <a href="index.html" class="logo"><img src="images/ALC_Group.png"></a>
+            <a href="index.html">Beranda</a>
+            <a href="quick-fact.html">Tentang Kami</a>
+            <a href="publication.html">Publikasi</a>
+            <a href="career.html">Karir</a>
+            <a href="employee-room.html">Ruang Pegawai</a>
+            <a href="contact-us.html">Kontak</a>
+            <a href="subsidiaries.html">Unduh Profil Perusahaan</a>
           </div>
     </section>
+
+    
     
 
     <section class="navbar">
         <div class="content">
-            <a href="/homepage.html"><img src="/images/ALC_Group.png" width="110" height="65"></a>
+            <a href="index.html"><img src="images/ALC_Group.png" width="110" height="65"></a>
 
-            <a onclick="openNav()"><img src="/images/burgerbar.png" alt="burger" width="30" height="30"></a>
+            <a onclick="openNav()"><img src="images/burgerbar.png" alt="burger" width="30" height="30"></a>
         </div>
     </section>
 
-    <section class="title" style="background-image: linear-gradient(rgb(105, 0, 0, 0.3), rgb(105, 0, 0, 0.3)), url('/images/tentang_kami.png');">
+    <section class="title" style="background-image: linear-gradient(rgb(105, 0, 0, 0.3), rgb(105, 0, 0, 0.3)), url('images/tentang_kami.png');">
         <div class="content">
           <h1>Contact Us</h1>
         </div>
@@ -47,14 +49,14 @@
 
     <section class="directory">
         <div class="content">
-            <p><a href="/homepage.html">PT Anomali Lintas Cakrawala</a> > <b><i>Contact Us</i></b></p>
+            <p><a href="index.html">PT Anomali Lintas Cakrawala</a> > <b><i>Contact Us</i></b></p>
         </div>
     </section>
 
     <section class="info">
         <div class="info_container">
             <div class="info_content">
-                <img class="info_img" width="50px" height="50px" src="/images/contact/Icon_Address_Blue-ts1624966582.svg">
+                <img class="info_img" width="50px" height="50px" src="images/contact/Icon_Address_Blue-ts1624966582.svg">
                 <div class="info_desc">
                     <h3>Address</h3>
                     <p>Patra Jasa Office Tower 17th Floor Suite 1701</p>
@@ -63,14 +65,14 @@
                 </div>
             </div>
             <div class="info_content">
-                <img class="info_img" width="50px" height="50px" src="/images/contact/Icon_Phone_Blue-ts1624966683.svg">
+                <img class="info_img" width="50px" height="50px" src="images/contact/Icon_Phone_Blue-ts1624966683.svg">
                 <div class="info_desc">
                     <h3>Phone</h3>
                     <p>+622152901240</p>
                 </div>
             </div>
             <div class="info_content">
-                <img class="info_img" width="50px" height="50px" src="/images/contact//Icon_Mail _Blue-ts1624970920.svg">
+                <img class="info_img" width="50px" height="50px" src="images/contact//Icon_Mail _Blue-ts1624970920.svg">
                 <div class="info_desc">
                     <h3>Email</h3>
                     <p>info@anomali.co.id</p>
@@ -90,11 +92,11 @@
 
             <div class="form_section" >
                 <iframe name="votar" style="display:none;"></iframe>
-                <form class="form_column" id="myForm" action="http://localhost/anomali_form.php" method="post" target="votar">  
-                    <input type="text" name="name" placeholder="Full Name" required value="admin">
-                    <input type="email" name="email" placeholder="Email" required value="admin@email.com">
-                    <input type="text" name="subject" placeholder="Subject" required value="admin">
-                    <textarea placeholder="Your Message" name="message" spellcheck="false" required>captcha test</textarea>
+                <form class="form_column" id="myForm" action="anomali_form.php" method="post" target="votar">  
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" name="message" spellcheck="false" required></textarea>
 
                     <div id="captcha-container" class="clearfix">
                         <canvas id="captcha-image"></canvas>
@@ -106,6 +108,7 @@
                     <p class="form_success"></p>
                 </form>
             </div>
+            
             <div class="form_loader"></div>
         </div>  
     </section>
@@ -145,6 +148,7 @@
         </div>
     </section>
 
-<script src="/script.js"></script>
+    
+<script src="script.js"></script>
 </body>
 </html>
