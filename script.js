@@ -25,7 +25,7 @@ function closeNav() {
 }
 
 const form = document.getElementById('myForm'); // Get reference to the form
-const form_success = document.querySelector(".form_success");
+const form_result = document.querySelector(".form_result");
 const form_loader = document.querySelector(".form_loader");
 
 // captcha
@@ -41,12 +41,13 @@ function generateCaptcha() {
   // Generate random numbers and text
   const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
   let captchaText = '';
+
   for (let i = 0; i < 5; i++) {
     captchaText += letters.charAt(Math.floor(Math.random() * letters.length));
     // Add a space after each character (except the last one)
-    if (i < 4) {
-      captchaText += ' ';
-    }
+    // if (i < 4) {
+    //   captchaText += ' ';
+    // }
   }
 
   // Set font and text
@@ -84,48 +85,71 @@ refreshButton.addEventListener('click', () => {
   captchaCode = generateCaptcha();
 });
 
-captchaInput.addEventListener('keyup', () => {
-  if (captchaInput.value === captchaCode) {
-    submitButton.disabled = false;
-  } else {
-    submitButton.disabled = true;
-  }
-});
+// captchaInput.addEventListener('keyup', () => {
+//   if (captchaInput.value === captchaCode) {
+//     submitButton.disabled = false;
+//   } else {
+//     submitButton.disabled = true;
+//   }
+// });
 
 
 form.addEventListener('submit', (event) => {
   const nameInput = form.elements.name; // Get form elements by name
   const emailInput = form.elements.email;
   const subjectInput = form.elements.subject;
+  const captchaInput = form.elements.captcha;
+
+  // captchaInput.value !== captchaCode
 
   // Check if all required fields are filled (excluding textarea)
   if (!nameInput.value || !emailInput.value || !subjectInput.value) {
     event.preventDefault(); // Prevent default form submission
 
+    form_result.classList.remove('form_result');
+    form_result.classList.add('form_result--error');
+    form_result.textContent = "Please fill in all required field (Name, Email, Subject).";
+
+  } else if (captchaInput.value !== captchaCode){
+    event.preventDefault(); // Prevent default form submission
+
+    captchaCode = generateCaptcha();
+
+    captchaInput.value ='';
+
     // Display an error message (optional)
-    alert('Please fill in all required fields (Name, Email, Subject).');
-    }
+    // alert('Please match the captcha in the image.');
+
+    form_result.classList.remove('form_result');
+    form_result.classList.add('form_result--error');
+    form_result.textContent = "Retry Your Captcha!";
+  } 
+  
+  else {
 
     form_loader.classList.remove('form_loader');
     form_loader.classList.add('form_loader--display');
-
-    form_success.classList.remove('form_success--display')
-    form_success.textContent = "";
-
+  
+    form_result.classList.remove('form_result--error');
+    form_result.classList.remove('form_result--success')
+    form_result.textContent = "";
+  
     setTimeout(function() {
-      form.reset(); //reset the form
-
+      form.reset(); //reset the form 
+  
       // display the sucess message
-      form_success.classList.remove('form_success');
-      form_success.classList.add('form_success--display');
-      form_success.textContent = "Your Message has been submitted!";
-
-      // display loader
+      form_result.classList.add('form_result--success');
+      form_result.textContent = "Your Message has been submitted!";
+  
+      // remove display loader
       form_loader.classList.remove('form_loader--display');
 
+      captchaCode = generateCaptcha();
+  
     }, 2000); // Reset form after 2 seconds\
   }
-);
+
+  });
 
 // google captcha
 

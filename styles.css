@@ -1087,7 +1087,7 @@ textarea:focus {
   transform: translateY(3px);
 }
 
-.form_success--display {
+.form_result--success {
   font-size: 14px;
   font-weight: 500;
   color: green;
@@ -1096,8 +1096,17 @@ textarea:focus {
   border-radius: 5px;
   transition: 200ms;
 }
+.form_result--error {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(91, 0, 0);
+  background-color: rgb(255, 66, 66);
+  padding: 15px 0 15px 15px;
+  border-radius: 5px;
+  transition: 200ms;
+}
 
-.form_success {
+.form_result {
   opacity: 0;
   visibility: hidden;
 }
